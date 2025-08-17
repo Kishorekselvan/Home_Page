@@ -1,18 +1,24 @@
 {
-  "name": "backend",
+  "name": "abacus",
   "version": "1.0.0",
   "main": "index.js",
+  "homepage": "https://Kishorekselvan.github.io/Home_page/",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "start": "node server.js",
+    "build": "cd ../frontend && npm install && npm run build && cp -r ../frontend/dist ./"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "description": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
-    "express": "^5.1.0",
+    "express": "^4.18.2",
     "mongodb": "^6.18.0",
     "mongoose": "^8.17.1"
   },
