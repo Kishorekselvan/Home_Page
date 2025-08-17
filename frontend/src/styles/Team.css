@@ -1,0 +1,72 @@
+.team-container {
+  width: 100vw;  /* use full viewport width */
+  min-height: calc(100vh - 130px); /* Full height minus navbar & footer */
+  margin-top: 70px; /* Navbar height */
+  margin-bottom: 60px; /* Footer height */
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7));
+  overflow-x: hidden; /* prevents horizontal scroll if padding overflows */
+}
+
+.team-content {
+  width: 100%;     
+  max-width: 100vw; /* ensure no limit */
+  padding: 3rem;
+  background-color: rgba(26, 26, 26, 0.8);
+  border-top: 3px solid #d10000;
+  box-shadow: 0 4px 12px rgba(209, 0, 0, 0.2);
+}
+
+.team-inner {
+  width: 100%;     
+  max-width: 100vw; /* take full width */
+  margin: 0;       /* remove centering margin */
+  text-align: center;
+  color: white;
+}
+
+.team-inner h1 {
+  font-size: 2.5rem;
+  color: #d10000;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.team-inner p {
+  font-size: 1.2rem;
+  width: 100%;        /* stretch text area */
+  max-width: none;    /* remove text box limit */
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* Tablet styles */
+@media (max-width: 992px) {
+  .team-content {
+    padding: 2rem;
+  }
+  
+  .team-inner h1 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .team-container {
+    min-height: calc(100vh - 120px);
+  }
+  
+  .team-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .team-inner h1 {
+    font-size: 1.8rem;
+  }
+  
+  .team-inner p {
+    font-size: 1rem;
+  }
+}

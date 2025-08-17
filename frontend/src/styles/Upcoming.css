@@ -1,0 +1,120 @@
+/* Upcoming Events Component - Red Theme */
+.upcoming-events-container {
+  padding: 1.5rem;
+  margin-top: 70px; /* Space for fixed navbar */
+  margin-bottom: 60px; /* Space for fixed footer */
+  min-height: calc(100vh - 130px); /* Full remaining height */
+}
+
+.upcoming-events-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #d10000; /* Primary red */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.event-card {
+  background: linear-gradient(135deg, #d10000, #8b0000);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.event-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(209, 0, 0, 0.3);
+}
+
+.event-card.expanded {
+  padding-bottom: 2rem;
+}
+
+.event-card.collapsed {
+  max-height: 100px;
+}
+
+.event-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-name::after {
+  content: '▼';
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.event-card.expanded .event-name::after {
+  transform: rotate(180deg);
+}
+
+.event-date {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.event-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1rem;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease, max-height 0.4s ease, padding-top 0.3s ease;
+}
+
+.event-card.expanded .event-description {
+  opacity: 1;
+  max-height: 500px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .upcoming-events-container {
+    padding: 1rem;
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+
+  .upcoming-events-title {
+    font-size: 1.5rem;
+  }
+
+  .event-card {
+    padding: 1.25rem;
+  }
+
+  .event-name {
+    font-size: 1.1rem;
+  }
+}

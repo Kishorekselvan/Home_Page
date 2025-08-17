@@ -1,0 +1,149 @@
+/* Workshops Component - Red Theme */
+.workshops-container {
+  padding: 1.5rem;
+  margin-top: 70px;
+  margin-bottom: 60px;
+  min-height: calc(100vh - 130px);
+  overflow-y: auto;
+}
+
+/* Red Title */
+.workshops-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #d10000;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Red Scrollbar */
+.workshops-container::-webkit-scrollbar {
+  width: 10px;
+}
+
+.workshops-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.workshops-container::-webkit-scrollbar-thumb {
+  background: #d10000;
+  border-radius: 5px;
+}
+
+.workshops-container::-webkit-scrollbar-thumb:hover {
+  background: #8b0000;
+}
+
+/* Firefox Scrollbar */
+.workshops-container {
+  scrollbar-width: thin;
+  scrollbar-color: #d10000 #f1f1f1;
+}
+
+/* Events List */
+.workshops-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Workshop Card */
+.workshop-card {
+  background: linear-gradient(135deg, #d10000, #8b0000);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.workshop-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.workshop-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(209, 0, 0, 0.3);
+}
+
+.workshop-card.expanded {
+  padding-bottom: 2rem;
+}
+
+.workshop-card.collapsed {
+  max-height: 100px;
+}
+
+.workshop-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.workshop-name::after {
+  content: '▼';
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.workshop-card.expanded .workshop-name::after {
+  transform: rotate(180deg);
+}
+
+.workshop-date {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.workshop-description {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 1rem;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.3s ease, max-height 0.4s ease, padding-top 0.3s ease;
+}
+
+.workshop-card.expanded .workshop-description {
+  opacity: 1;
+  max-height: 500px;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .workshops-container {
+    padding: 1rem;
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
+
+  .workshops-title {
+    font-size: 1.5rem;
+  }
+
+  .workshop-card {
+    padding: 1.25rem;
+  }
+
+  .workshop-name {
+    font-size: 1.1rem;
+  }
+}
